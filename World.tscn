@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://World/Tree.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
+
+[node name="World" type="YSort"]
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 156.51, 83.4275 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 36.8644, 100.153, 54.3261, 63.3415, 53.8542, 95.9052, 108.127, 105.344, 48.1909, 109.119, 29.7854, 133.188, 19.4028, 87.4103, 26.4818, 48.7114 )
+
+[node name="Tree" parent="." instance=ExtResource( 1 )]
+position = Vector2( 268.522, 74.5995 )

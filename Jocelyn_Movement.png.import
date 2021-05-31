@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/JocelynWalk.png-165d016763270d7c8f08dbfc32329a75.stex"
+path="res://.import/Jocelyn_Movement.png-723bc9b8ebb04e2a27805a6a528741e9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/JocelynWalk.png"
-dest_files=[ "res://.import/JocelynWalk.png-165d016763270d7c8f08dbfc32329a75.stex" ]
+source_file="res://Jocelyn_Movement.png"
+dest_files=[ "res://.import/Jocelyn_Movement.png-723bc9b8ebb04e2a27805a6a528741e9.stex" ]
 
 [params]
 

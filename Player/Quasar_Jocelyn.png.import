@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sprite-0002.png-39ab6997e2298a254aa96a54d88248c9.stex"
+path="res://.import/Quasar_Jocelyn.png-b586db9f12a5e80993118e80081cf72a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Sprite-0002.png"
-dest_files=[ "res://.import/Sprite-0002.png-39ab6997e2298a254aa96a54d88248c9.stex" ]
+source_file="res://Player/Quasar_Jocelyn.png"
+dest_files=[ "res://.import/Quasar_Jocelyn.png-b586db9f12a5e80993118e80081cf72a.stex" ]
 
 [params]
 

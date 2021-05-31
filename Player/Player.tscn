@@ -1,11 +1,27 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
-[ext_resource path="res://Player/JocelynWalk.png" type="Texture" id=1]
+[ext_resource path="res://Player/Jocelyn_Movement.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 7.90912
 height = 7.17655
+
+[sub_resource type="Animation" id=24]
+resource_name = "Atack_Down"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 20, 21, 22, 23 ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "Idle_Down"
@@ -87,7 +103,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 1, 2, 3, 2 ]
+"values": [ 1, 2, 3, 0 ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -103,7 +119,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 16, 17, 18, 17 ]
+"values": [ 18, 15, 16, 17 ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -119,7 +135,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 6, 7, 8, 7 ]
+"values": [ 8, 5, 6, 7 ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -135,78 +151,78 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 11, 12, 13, 12 ]
+"values": [ 13, 10, 11, 12 ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=20]
+[sub_resource type="AnimationNodeAnimation" id=10]
 animation = "Idle_Left"
 
-[sub_resource type="AnimationNodeAnimation" id=21]
+[sub_resource type="AnimationNodeAnimation" id=11]
 animation = "Idle_Right"
 
-[sub_resource type="AnimationNodeAnimation" id=23]
+[sub_resource type="AnimationNodeAnimation" id=12]
 animation = "Idle_Up"
 
-[sub_resource type="AnimationNodeAnimation" id=25]
+[sub_resource type="AnimationNodeAnimation" id=13]
 animation = "Idle_Down"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=24]
-blend_point_0/node = SubResource( 20 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=14]
+blend_point_0/node = SubResource( 10 )
 blend_point_0/pos = Vector2( -1, 0 )
-blend_point_1/node = SubResource( 21 )
+blend_point_1/node = SubResource( 11 )
 blend_point_1/pos = Vector2( 1, 0 )
-blend_point_2/node = SubResource( 23 )
+blend_point_2/node = SubResource( 12 )
 blend_point_2/pos = Vector2( 0, -1 )
-blend_point_3/node = SubResource( 25 )
+blend_point_3/node = SubResource( 13 )
 blend_point_3/pos = Vector2( 0, 1 )
 blend_mode = 1
 
-[sub_resource type="AnimationNodeAnimation" id=26]
+[sub_resource type="AnimationNodeAnimation" id=15]
 animation = "Walk_Down"
 
-[sub_resource type="AnimationNodeAnimation" id=27]
+[sub_resource type="AnimationNodeAnimation" id=16]
 animation = "Walk_Right"
 
-[sub_resource type="AnimationNodeAnimation" id=28]
+[sub_resource type="AnimationNodeAnimation" id=17]
 animation = "Walk_Up"
 
-[sub_resource type="AnimationNodeAnimation" id=29]
+[sub_resource type="AnimationNodeAnimation" id=18]
 animation = "Walk_Left"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=30]
-blend_point_0/node = SubResource( 26 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=19]
+blend_point_0/node = SubResource( 15 )
 blend_point_0/pos = Vector2( 0, 1.1 )
-blend_point_1/node = SubResource( 27 )
+blend_point_1/node = SubResource( 16 )
 blend_point_1/pos = Vector2( 1, 0 )
-blend_point_2/node = SubResource( 28 )
+blend_point_2/node = SubResource( 17 )
 blend_point_2/pos = Vector2( 0, -1.1 )
-blend_point_3/node = SubResource( 29 )
+blend_point_3/node = SubResource( 18 )
 blend_point_3/pos = Vector2( -1, 0 )
 min_space = Vector2( -1, -1.1 )
 max_space = Vector2( 1, 1.1 )
 blend_mode = 1
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=31]
+[sub_resource type="AnimationNodeStateMachineTransition" id=20]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=32]
+[sub_resource type="AnimationNodeStateMachineTransition" id=21]
 
-[sub_resource type="AnimationNodeStateMachine" id=18]
-states/Idle/node = SubResource( 24 )
+[sub_resource type="AnimationNodeStateMachine" id=22]
+states/Idle/node = SubResource( 14 )
 states/Idle/position = Vector2( 367, 88 )
-states/Walk/node = SubResource( 30 )
+states/Walk/node = SubResource( 19 )
 states/Walk/position = Vector2( 513, 88 )
-transitions = [ "Walk", "Idle", SubResource( 31 ), "Idle", "Walk", SubResource( 32 ) ]
+transitions = [ "Walk", "Idle", SubResource( 20 ), "Idle", "Walk", SubResource( 21 ) ]
 start_node = "Idle"
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=19]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=23]
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 1, -8 )
+position = Vector2( 0.140312, -10.1022 )
 texture = ExtResource( 1 )
-hframes = 20
+hframes = 24
 frame = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -214,6 +230,7 @@ position = Vector2( 0.123095, -8.77542 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Atack_Down = SubResource( 24 )
 anims/Idle_Down = SubResource( 2 )
 anims/Idle_Left = SubResource( 3 )
 anims/Idle_Right = SubResource( 4 )
@@ -224,9 +241,9 @@ anims/Walk_Right = SubResource( 8 )
 anims/Walk_Up = SubResource( 9 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 18 )
+tree_root = SubResource( 22 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 19 )
+parameters/playback = SubResource( 23 )
 parameters/Idle/blend_position = Vector2( 0, -0.991379 )
 parameters/Walk/blend_position = Vector2( 0.00154555, 0.10431 )

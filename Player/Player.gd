@@ -7,10 +7,10 @@ var velocity = Vector2.ZERO
 
 enum {
 	MOVE,
-	ATACK
+	ATTACK
 }
 
-var state
+var state = MOVE
 
 onready var animation_player = $AnimationPlayer
 onready var animation_tree = $AnimationTree
@@ -23,7 +23,7 @@ func _physics_process(delta):
 	match state:
 		MOVE:
 			move_state(delta)
-		ATACK:
+		ATTACK:
 			attack_state(delta)
 
 func move_state(delta):
@@ -44,7 +44,7 @@ func move_state(delta):
 	velocity = move_and_slide(velocity)
 
 	if Input.is_action_just_pressed("ui_down"):
-		state = ATACK
+		state = ATTACK
 
 func attack_state(delta):
-	pass
+	animation_player.play("Atack_Down")
